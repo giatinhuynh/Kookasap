@@ -41,6 +41,9 @@ function getMealList(){
         }
 
         mealList.innerHTML = html;
+    })
+    .catch(error => {
+        console.error(error);
     });
 }
 
@@ -52,7 +55,10 @@ function getMealRecipe(e){
         let mealItem = e.target.parentElement.parentElement;
         fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`)
         .then(response => response.json())
-        .then(data => mealRecipeModal(data.meals));
+        .then(data => mealRecipeModal(data.meals))
+        .catch(error => {
+            console.error(error);
+        });
     }
 }
 
@@ -61,7 +67,4 @@ function mealRecipeModal(meal){
     console.log(meal);
     meal = meal[0];
     let html = `
-        <h2 class = "recipe-title">${meal.strMeal}</h2>
-        <p class = "recipe-category">${meal.strCategory}</p>
-        <div class = "recipe-instruct">
-            <h3>Instructions:</h
+        <h2 class = "recipe-title">${meal.strMeal
