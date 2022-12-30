@@ -14,7 +14,10 @@ recipeCloseBtn.addEventListener('click', () => {
 // get meal list that matches with the ingredients
 function getMealList(){
     let searchInputTxt = document.getElementById('search-input').value.trim();
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`)
+    let ingredients = searchInputTxt.split(","); // split the input string by comma
+    ingredients = ingredients.map(ingredient => ingredient.trim()); // trim leading and trailing whitespaces
+    let queryString = ingredients.map(ingredient => `i=${ingredient}`).join("&"); // create a query string for each ingredient
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?${queryString}`)
     .then(response => response.json())
     .then(data => {
         let html = "";
