@@ -14,8 +14,8 @@ recipeCloseBtn.addEventListener('click', () => {
 // get meal list that matches with the ingredients
 function getMealList(){
     let searchInputTxt = document.getElementById('search-input').value.trim();
-    // split the ingredients by comma and join them with a comma
-    let ingredients = searchInputTxt.split(',').join(',');
+    // split the ingredients by comma and join them with a URL-encoded comma
+    let ingredients = searchInputTxt.split(',').join('%2C');
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredients}`)
     .then(response => response.json())
     .then(data => {
@@ -64,16 +64,4 @@ function mealRecipeModal(meal){
         <h2 class = "recipe-title">${meal.strMeal}</h2>
         <p class = "recipe-category">${meal.strCategory}</p>
         <div class = "recipe-instruct">
-            <h3>Instructions:</h3>
-            <p>${meal.strInstructions}</p>
-        </div>
-        <div class = "recipe-meal-img">
-            <img src = "${meal.strMealThumb}" alt = "">
-        </div>
-        <div class = "recipe-link">
-            <a href = "${meal.strYoutube}" target = "_blank">Watch Video</a>
-        </div>
-    `;
-    mealDetailsContent.innerHTML = html;
-    mealDetailsContent.parentElement.classList.add('showRecipe');
-}
+            <h3>Instructions:</h
