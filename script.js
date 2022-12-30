@@ -14,34 +14,38 @@ recipeCloseBtn.addEventListener('click', () => {
 // get meal list that matches with the ingredients
 function getMealList(){
     let searchInputTxt = document.getElementById('search-input').value.trim();
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`)
+    let ingredients = searchInputTxt.split(',');  // split the search text by ',' and store the list of ingredients in an array
+    let queryString = '';  // initialize an empty query string
+    ingredients.forEach((ingredient, index) => {  // iterate through the ingredients array
+      ingredient = ingredient.trim();  // remove leading and trailing whitespaces from the ingredient
+      queryString += `&i${index+1}=${ingredient}`;  // append the ingredient to the query string
+    });
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?${queryString}`)  // use the modified query string in the API request
     .then(response => response.json())
     .then(data => {
-        let html = "";
-        if(data.meals){
-            data.meals.forEach(meal => {
-                html += `
-                    <div class = "meal-item" data-id = "${meal.idMeal}">
-                        <div class = "meal-img">
-                            <img src = "${meal.strMealThumb}" alt = "food">
-                        </div>
-                        <div class = "meal-name">
-                            <h3>${meal.strMeal}</h3>
-                            <a href = "#" class = "recipe-btn">Get Recipe</a>
-                        </div>
-                    </div>
-                `;
-            });
-            mealList.classList.remove('notFound');
-        } else{
-            html = "Sorry, we didn't find any meal!";
-            mealList.classList.add('notFound');
-        }
-
-        mealList.innerHTML = html;
+      let html = "";
+      if(data.meals){
+          data.meals.forEach(meal => {
+              html += `
+                  <div class = "meal-item" data-id = "${meal.idMeal}">
+                      <div class = "meal-img">
+                          <img src = "${meal.strMealThumb}" alt = "food">
+                      </div>
+                      <div class = "meal-name">
+                          <h3>${meal.strMeal}</h3>
+                          <a href = "#" class = "recipe-btn">Get Recipe</a>
+                      </div>
+                  </div>
+              `;
+          });
+          mealList.classList.remove('notFound');
+      } else{
+          html = "Sorry, we didn't find any meal!";
+          mealList.classList.add('notFound');
+      }
+      mealList.innerHTML = html;
     });
-}
-
+  }
 
 // get recipe of the meal
 function getMealRecipe(e){
