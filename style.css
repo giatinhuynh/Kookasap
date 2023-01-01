@@ -9,6 +9,23 @@
     --tenne-tawny: #d65108;
     --tenne-tawny-dark: #b54507;
 }
+.main-nav {
+    background-color: white;
+    padding: 0%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    text-transform:uppercase ;
+    padding-right: 0.25rem;
+
+}
+li {
+    margin-right: 40px;
+}
 body{
     font-weight: 300;
     font-size: 1.05rem;
