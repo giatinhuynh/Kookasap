@@ -23,8 +23,12 @@
     padding-right: 0.25rem;
 
 }
-li {
+li a {
     margin-right: 40px;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.25rem;
+    text-decoration:none
 }
 body{
     font-weight: 300;
