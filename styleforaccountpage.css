@@ -117,3 +117,24 @@
     background-color: var(--tenne-tawny-dark);
     border-color: var(--tenne-tawny-dark);
   }
+  .main-nav {
+    background-color: white;
+    padding: 0%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    text-transform:uppercase ;
+    padding-right: 0.25rem;
+
+}
+li {
+    margin-right: 40px;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.25rem;
+    text-decoration:none
+}
