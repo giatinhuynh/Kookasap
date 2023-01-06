@@ -1,0 +1,98 @@
+.main-nav {
+    background-color: white;
+    padding: 0%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    text-transform:uppercase ;
+    padding-right: 0.25rem;
+
+}
+li a {
+    margin-right: 40px;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.25rem;
+    text-decoration:none
+}
+body{
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+}
+#meal-plan-form {
+    width: 800px; /* set a fixed width for the form */
+    margin: 0 auto; /* center the form on the page */
+    background-color: white; /* set the background color to white */
+    padding: 20px; /* add some padding to the form */
+    border-radius: 8px; /* add rounded corners to the form */
+    color: black; /* set the text color to black */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* add a subtle shadow to the form */
+}
+
+#meal-plan-form table {
+    width: 100%; /* set the table to be full width */
+    border-collapse: collapse; /* remove the default table border */
+}
+
+#meal-plan-form th,
+#meal-plan-form td {
+    padding: 8px; /* add some padding to the table cells */
+    border: 1px solid white; /* set the border color to a light grey */
+    text-align: center; /* center the text in the table cells */
+}
+
+#meal-plan-form th {
+    background-color: #d65108; /* add a #d65108 background color to the table headers */
+    font-weight: bold; /* make the table headers bold */
+    color: white; /* set the text color of the table headers to white */
+    border: white;
+}
+
+#meal-plan-form input[type="text"] {
+    width: 100%; /* make the input fields full width */
+    border: 1px solid black; /* set the border color of the input fields to a light grey */
+    background-color: white; /* set the background color of the input fields to white */
+    padding: 12px; /* add some padding to the input fields */
+    font-size: 16px; /* increase the font size of the input fields */
+    box-sizing: border-box; /* allow the input fields to be resized */
+    color: black; /* set the text color of the input fields to black */
+}
+
+#meal-plan-form input[type="text"]:focus {
+    border: 1px solid #d65108; /* set the border color of the input fields to #d65108 when they are focused */
+    outline: none; /* remove the default outline around the input fields */
+}
+
+#create-shopping-list-btn {
+    display: block; /* make the button a block element */
+    width: 200px; /* set a fixed width for the button */
+    margin: 20px auto; /* center the button on the page */
+    padding: 14px; /* add some padding to the button */
+    border: none; /* remove the default border around the button */
+    border-radius: 4px; /* add rounded corners to the button */
+    background-color: #d65108; /* set the background color of the button to #d65108 */
+    color: white; /* set the text color of the button to white */
+    font-size: 16px; /* increase the font size of the button */
+    font-weight: bold; /* make the button text bold */
+    cursor: pointer; /* change the cursor to a pointer when hovering over the button */
+}
+
+#create-shopping-list-btn:hover {
+    background-color: #9e3b0e; /* set the background color of the button to a slightly darker color when hovering */
+}
+
+#create-shopping-list-btn:active {
+    transform: translateY(2px); /* slightly shift the button down when it is active (clicked) */
+}
+
+#create-shopping-list-btn:disabled {
+    background-color: #ccc; /* set the background color of the button to a light grey when it is disabled */
+    color: #999; /* set the text color of the button to a darker grey when it is disabled */
+    cursor: not-allowed; /* change the cursor to a "not allowed" icon when the button is disabled */
+}
