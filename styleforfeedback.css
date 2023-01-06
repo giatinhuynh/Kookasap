@@ -2,7 +2,7 @@ footer {
     font-family: 'Poppins', sans-serif;
     color: black;
   }
-  
+
   #feedback-form {
     display: flex;
     flex-direction: column;
@@ -10,13 +10,13 @@ footer {
     width: 80%;
     margin: 0 auto;
   }
-  
+
   #feedback-form label {
     color: black;
     font-size: 1.2em;
     margin-bottom: 0.1rem;
   }
-  
+
   #feedback-form input[type="text"],
   #feedback-form textarea {
     border: 1px solid #b54507;
@@ -26,7 +26,7 @@ footer {
     padding: 0.25em;
     margin-bottom: -1em;
   }
-  
+
   #feedback-form input[type="submit"] {
     background-color: #b54507;
     color: white;
@@ -37,4 +37,3 @@ footer {
     margin-bottom: auto;
     border-radius: 10%;
   }
-
